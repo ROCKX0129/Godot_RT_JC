@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcvrahv6g4dm"]
+
+[ext_resource type="Script" path="res://monster_spowner.gd" id="1_fmu27"]
+[ext_resource type="PackedScene" uid="uid://quc5j6fnor6m" path="res://Scence_file/spirit.tscn" id="2_svqrp"]
+
+[node name="Monster_Spowner" type="Node2D"]
+script = ExtResource("1_fmu27")
+Enemy_Gobling = ExtResource("2_svqrp")

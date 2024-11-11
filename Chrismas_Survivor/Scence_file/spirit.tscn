@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://quc5j6fnor6m"]
+
+[ext_resource type="Script" path="res://spirit.gd" id="1_sdp8r"]
+[ext_resource type="Texture2D" uid="uid://b6tshk4ubltg5" path="res://player_M/Vihollisen/vihollisen.png" id="2_30146"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0i8cs"]
+
+[node name="Spirit" type="CharacterBody2D"]
+script = ExtResource("1_sdp8r")
+
+[node name="Spirit_shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0i8cs")
+
+[node name="Spirit_pic" type="Sprite2D" parent="."]
+position = Vector2(-2.5, 6.75)
+scale = Vector2(0.916667, 0.829114)
+texture = ExtResource("2_30146")
