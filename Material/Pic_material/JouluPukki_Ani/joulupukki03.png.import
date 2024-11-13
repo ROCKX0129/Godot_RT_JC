@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6tshk4ubltg5"
-path="res://.godot/imported/vihollisen.png-123cde2ffefe4a9569507c933dbed076.ctex"
+uid="uid://dpafjd7qx02p3"
+path="res://.godot/imported/joulupukki03.png-a0c553c148d62981ca9b1d105e75438a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_M/Vihollisen/vihollisen.png"
-dest_files=["res://.godot/imported/vihollisen.png-123cde2ffefe4a9569507c933dbed076.ctex"]
+source_file="res://Material/Pic_material/JouluPukki_Ani/joulupukki03.png"
+dest_files=["res://.godot/imported/joulupukki03.png-a0c553c148d62981ca9b1d105e75438a.ctex"]
 
 [params]
 

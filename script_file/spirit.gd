@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var SPEED = 100
 var player : Player = null
+@onready var Spirit_pic:Sprite2D = $Spirit_pic
+@onready var  Moving_Timer = $Moving_Timer
 
 
 func location_to_player():
@@ -15,5 +17,5 @@ func _process(delta: float) -> void:
 	velocity = direction*SPEED
 	move_and_slide()
 		
-	
-	pass
+
+	pass # Replace with function body.

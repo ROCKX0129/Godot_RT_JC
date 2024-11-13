@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpfv8t8xn213"]
+
+[ext_resource type="PackedScene" uid="uid://ynfeyg5olns0" path="res://Scence_file/player.tscn" id="1_v45ge"]
+[ext_resource type="PackedScene" uid="uid://bcvrahv6g4dm" path="res://Scence_file/monster_spowner.tscn" id="2_y3cpp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_v45ge")]
+
+[node name="Monster_Spowner" parent="." instance=ExtResource("2_y3cpp")]

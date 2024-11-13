@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8wk2myy7i5b0"
-path="res://.godot/imported/joulupukki02.png-a6a27fc3e940080a0f290f53b713044b.ctex"
+uid="uid://b84i1i5o3yrox"
+path="res://.godot/imported/joulupukki04.png-37b6d85503e5c4cfffaf7362af24ff83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_M/JouluPukki_Ani/joulupukki02.png"
-dest_files=["res://.godot/imported/joulupukki02.png-a6a27fc3e940080a0f290f53b713044b.ctex"]
+source_file="res://Material/Pic_material/JouluPukki_Ani/joulupukki04.png"
+dest_files=["res://.godot/imported/joulupukki04.png-37b6d85503e5c4cfffaf7362af24ff83.ctex"]
 
 [params]
 

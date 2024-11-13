@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://quc5j6fnor6m"]
+[gd_scene load_steps=5 format=3 uid="uid://quc5j6fnor6m"]
 
-[ext_resource type="Script" path="res://spirit.gd" id="1_sdp8r"]
-[ext_resource type="Texture2D" uid="uid://b6tshk4ubltg5" path="res://player_M/Vihollisen/vihollisen.png" id="2_30146"]
+[ext_resource type="Script" path="res://script_file/spirit.gd" id="1_sdp8r"]
+[ext_resource type="Texture2D" uid="uid://b6tshk4ubltg5" path="res://Material/Pic_material/Vihollisen/vihollisen.png" id="2_30146"]
+[ext_resource type="Script" path="res://script_file/spirit_pic.gd" id="3_0cofi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0i8cs"]
 
@@ -15,3 +16,10 @@ shape = SubResource("CapsuleShape2D_0i8cs")
 position = Vector2(-2.5, 6.75)
 scale = Vector2(0.916667, 0.829114)
 texture = ExtResource("2_30146")
+script = ExtResource("3_0cofi")
+
+[node name="Moving_Timer" type="Timer" parent="Spirit_pic"]
+wait_time = 0.28
+autostart = true
+
+[connection signal="timeout" from="Spirit_pic/Moving_Timer" to="Spirit_pic" method="_on_moving_timer_timeout"]
