@@ -14,3 +14,7 @@ config/name="RT_Chrismas_Survivor"
 run/main_scene="res://Scence_file/node_2d.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Material/Pic_material/icon.svg"
+
+[global_group]
+
+Attack=""

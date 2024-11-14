@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://quc5j6fnor6m"]
+[gd_scene load_steps=6 format=3 uid="uid://quc5j6fnor6m"]
 
 [ext_resource type="Script" path="res://script_file/spirit.gd" id="1_sdp8r"]
 [ext_resource type="Texture2D" uid="uid://b6tshk4ubltg5" path="res://Material/Pic_material/Vihollisen/vihollisen.png" id="2_30146"]
@@ -6,11 +6,10 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0i8cs"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7554"]
+
 [node name="Spirit" type="CharacterBody2D"]
 script = ExtResource("1_sdp8r")
-
-[node name="Spirit_shape" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_0i8cs")
 
 [node name="Spirit_pic" type="Sprite2D" parent="."]
 position = Vector2(-2.5, 6.75)
@@ -22,4 +21,14 @@ script = ExtResource("3_0cofi")
 wait_time = 0.28
 autostart = true
 
+[node name="Spirit_shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0i8cs")
+
+[node name="Hiiting_Box" type="Area2D" parent="."]
+
+[node name="Hiiting_Box_Shape" type="CollisionShape2D" parent="Hiiting_Box"]
+shape = SubResource("CapsuleShape2D_x7554")
+
 [connection signal="timeout" from="Spirit_pic/Moving_Timer" to="Spirit_pic" method="_on_moving_timer_timeout"]
+[connection signal="area_entered" from="Hiiting_Box" to="." method="_on_hiiting_box_area_entered"]
+[connection signal="body_entered" from="Hiiting_Box" to="." method="_on_hiiting_box_body_entered"]
