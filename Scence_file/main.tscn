@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8f6rbo2s3oig"]
+
+[ext_resource type="Script" path="res://script_file/main.gd" id="1_ljgut"]
+[ext_resource type="PackedScene" uid="uid://cpi8hdao1ptxc" path="res://Scence_file/BG.tscn" id="2_j56im"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ljgut")
+
+[node name="startGame" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 206.0
+offset_right = 704.0
+offset_bottom = 244.0
+text = "New Game"
+
+[node name="loadGame" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 272.0
+offset_right = 704.0
+offset_bottom = 310.0
+text = "Load Game"
+
+[node name="quitGame" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 344.0
+offset_right = 704.0
+offset_bottom = 382.0
+text = "Quit Game"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_j56im")]
+
+[connection signal="pressed" from="startGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="quitGame" to="." method="_on_quit_game_pressed"]
