@@ -1,9 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuhk4f1tsji2c"]
+[gd_scene load_steps=7 format=3 uid="uid://cuhk4f1tsji2c"]
 
 [ext_resource type="Script" path="res://script_file/doge.gd" id="1_2hsjp"]
-[ext_resource type="Texture2D" uid="uid://droih3ycvhmvx" path="res://Material/Pic_material/icon.svg" id="2_54e3v"]
+[ext_resource type="Texture2D" uid="uid://bcnh3oggcsv0x" path="res://Material/Pic_material/Doge_Ani/koiraa1.png" id="2_eu7hq"]
+[ext_resource type="Texture2D" uid="uid://bsojuj024jb17" path="res://Material/Pic_material/Doge_Ani/koiraa2.png" id="3_wwtwr"]
+[ext_resource type="Texture2D" uid="uid://bufbuysrokf4a" path="res://Material/Pic_material/Doge_Ani/koiraa3.png" id="4_t2nen"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6ykd3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8hwt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eu7hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wwtwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2nen")
+}],
+"loop": true,
+"name": &"Doge_running",
+"speed": 5.0
+}]
 
 [node name="Doge" type="Area2D"]
 script = ExtResource("1_2hsjp")
@@ -11,6 +30,7 @@ script = ExtResource("1_2hsjp")
 [node name="Doge_shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6ykd3")
 
-[node name="Doge_pic" type="Sprite2D" parent="."]
-scale = Vector2(0.448598, 0.368421)
-texture = ExtResource("2_54e3v")
+[node name="Doge_Ani" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.470836, 0.500827)
+sprite_frames = SubResource("SpriteFrames_p8hwt")
+animation = &"Doge_running"
