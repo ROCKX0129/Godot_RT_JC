@@ -15,6 +15,10 @@ run/main_scene="res://Scence_file/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Material/Pic_material/icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 Attack=""
