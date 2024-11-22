@@ -6,6 +6,7 @@ var player= null
 @onready var  Moving_Timer = $Moving_Timer
 @onready var Hitting_Box = $Hiiting_Box
 var attack :Attack
+var health = 1.0
 
 func location_to_player():
 	var player_node = get_tree().get_first_node_in_group("Player") as Node2D
@@ -20,9 +21,17 @@ func _process(delta: float) -> void:
 
 	pass # Replace with function body.
 
+func take_damage(amount: int) -> void:
+	health -= amount
+	if health <= 0:
+		die()
+			
 
-func _on_hiiting_box_area_entered(area: Area2D) -> void:
-	if area.get_name() == "Doge":
+func die():
+	queue_free()  # Poistetaan pelaaja pelistä
+
+
+func _on_hiiting_box_body_entered(body: Node2D) -> void:
+	if body.name == "Player":  # Jos osuu pelaajaan
+		body.take_damage(3)  # Vähennetään pelaajan terveyttä
 		queue_free()
-		pass
-	pass # Replace with function body.

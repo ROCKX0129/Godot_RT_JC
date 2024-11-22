@@ -5,6 +5,10 @@ class_name Player
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+signal health_depleted
+
+var health = 100
+
 func _ready() -> void:
 	add_to_group("Player")
 	pass
@@ -29,3 +33,15 @@ func _physics_process(delta: float) -> void:
 		play_Ani.stop()
 
 	move_and_slide()
+
+func take_damage(amount: int) -> void:
+	health -= amount  # Vähennetään pelaajan terveyttä
+	%ProgressBar.value = health
+	if health <= 0:
+		die()  # Pelaaja kuolee, jos terveys menee nollaan
+
+# Funktio, joka käsittelee pelaajan kuoleman
+func die():
+	health_depleted.emit()
+	
+	

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpfv8t8xn213"]
+[gd_scene load_steps=6 format=3 uid="uid://bpfv8t8xn213"]
 
+[ext_resource type="Script" path="res://script_file/world.gd" id="1_ruyrh"]
 [ext_resource type="PackedScene" uid="uid://ynfeyg5olns0" path="res://Scence_file/player.tscn" id="1_uls1l"]
 [ext_resource type="PackedScene" uid="uid://bcvrahv6g4dm" path="res://Scence_file/monster_spowner.tscn" id="2_wyw5g"]
 [ext_resource type="PackedScene" uid="uid://cuhk4f1tsji2c" path="res://Scence_file/Doge.tscn" id="3_pvi6c"]
@@ -7,12 +8,13 @@
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_ruyrh")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -1362.0
-offset_top = -818.0
-offset_right = 2781.0
-offset_bottom = 1661.0
+offset_left = -1300.0
+offset_top = -616.0
+offset_right = 2843.0
+offset_bottom = 1863.0
 
 [node name="Player" parent="." instance=ExtResource("1_uls1l")]
 position = Vector2(607, 328)
@@ -75,3 +77,65 @@ position = Vector2(-88, 835)
 
 [node name="Pinetree18" parent="." instance=ExtResource("4_mv551")]
 position = Vector2(-296, -105)
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0177324, 0.0177324, 0.0177324, 0.560784)
+
+[node name="Label" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 45
+text = "Game Over"
+
+[node name="startNewGame" type="Button" parent="GameOver"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = 51.0
+offset_right = 107.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Start New Game"
+
+[node name="mainMenu" type="Button" parent="GameOver"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 108.0
+offset_right = 109.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+text = "Main Menu"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="pressed" from="GameOver/startNewGame" to="." method="_on_start_new_game_pressed"]
+[connection signal="pressed" from="GameOver/mainMenu" to="." method="_on_main_menu_pressed"]

@@ -11,20 +11,15 @@ offset_left = 384.0
 offset_top = 206.0
 offset_right = 704.0
 offset_bottom = 244.0
+theme_override_font_sizes/font_size = 25
 text = "New Game"
-
-[node name="loadGame" type="Button" parent="."]
-offset_left = 384.0
-offset_top = 272.0
-offset_right = 704.0
-offset_bottom = 310.0
-text = "Load Game"
 
 [node name="quitGame" type="Button" parent="."]
 offset_left = 384.0
-offset_top = 344.0
+offset_top = 288.0
 offset_right = 704.0
-offset_bottom = 382.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 25
 text = "Quit Game"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_j56im")]

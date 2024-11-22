@@ -22,3 +22,9 @@ func _physics_process(delta: float) -> void:
 		Doge_Ani.set_flip_h(true)
 		pass
 	
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(1)
+		
