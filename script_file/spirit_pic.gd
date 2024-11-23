@@ -1,4 +1,5 @@
 extends Sprite2D
+@onready var moving_timer: Timer = $Moving_Timer
 
 var rotate_num = 0.20
 

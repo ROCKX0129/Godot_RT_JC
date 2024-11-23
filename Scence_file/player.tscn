@@ -47,15 +47,20 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.6, 0.6)
+motion_mode = 1
+slide_on_ceiling = false
 script = ExtResource("1_0dtmi")
 
 [node name="Player_Ani" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.582524, 0.555556)
 sprite_frames = SubResource("SpriteFrames_46weg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_11ewy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true

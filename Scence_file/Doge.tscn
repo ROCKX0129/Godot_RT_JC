@@ -25,6 +25,7 @@ animations = [{
 }]
 
 [node name="Doge" type="Area2D"]
+scale = Vector2(0.6, 0.645)
 script = ExtResource("1_2hsjp")
 
 [node name="Doge_shape" type="CollisionShape2D" parent="."]

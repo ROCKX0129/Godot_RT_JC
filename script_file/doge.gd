@@ -4,8 +4,8 @@ class_name Attack
 @onready var Doge_Ani = $Doge_Ani
 
 var Doge_jumped_high = 0
-var speed = 4
-var Size_speed = 150
+var speed = 3
+var Size_speed = 100
 var d =0
 @onready var player = get_parent().get_node("Player")
 

@@ -12,11 +12,12 @@ radius = 13.0
 height = 48.0
 
 [node name="Spirit" type="CharacterBody2D"]
+scale = Vector2(0.530973, 0.506666)
 script = ExtResource("1_sdp8r")
 
 [node name="Spirit_pic" type="Sprite2D" parent="."]
 position = Vector2(-2.5, 6.75)
-scale = Vector2(0.916667, 0.829114)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_30146")
 script = ExtResource("3_0cofi")
 
