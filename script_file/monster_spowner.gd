@@ -1,6 +1,7 @@
 extends Node2D
 @onready var spown_timer=$Spirit_Timer
 @export var Enemy_Gobling:PackedScene
+@export var Exp_present:PackedScene
 var SPOWN_RADIUS = 350
 @onready var player = get_parent().get_node("Player")
 
@@ -8,7 +9,11 @@ func _ready() -> void:
 	spown_timer.start()
 	pass
 	
-
+func spirit_dead(position):
+	var present_spown = Exp_present.instantiate()
+	get_parent().add_child(present_spown)
+	present_spown.global_position = position
+	pass
 
 func _on_spirit_timer_timeout() -> void:
 	var player_position = player.global_position

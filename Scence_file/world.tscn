@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://bpfv8t8xn213"]
+[gd_scene load_steps=10 format=4 uid="uid://bpfv8t8xn213"]
 
 [ext_resource type="Script" path="res://script_file/world.gd" id="1_ruyrh"]
 [ext_resource type="PackedScene" uid="uid://ynfeyg5olns0" path="res://Scence_file/player.tscn" id="1_uls1l"]
 [ext_resource type="PackedScene" uid="uid://bcvrahv6g4dm" path="res://Scence_file/monster_spowner.tscn" id="2_wyw5g"]
 [ext_resource type="PackedScene" uid="uid://cuhk4f1tsji2c" path="res://Scence_file/Doge.tscn" id="3_pvi6c"]
+[ext_resource type="PackedScene" uid="uid://cnq2ti3urv4fc" path="res://Scence_file/present_01.tscn" id="4_6s71d"]
 [ext_resource type="Texture2D" uid="uid://55semgt05r6g" path="res://Material/Pic_material/Tilemap_texture/tilemap _01.png" id="5_68npu"]
 [ext_resource type="PackedScene" uid="uid://hh203bbekjul" path="res://Scence_file/map_layer.tscn" id="6_1kfwq"]
 
@@ -43,6 +44,7 @@ script = ExtResource("1_ruyrh")
 position = Vector2(48, 54)
 
 [node name="Monster_Spowner" parent="." instance=ExtResource("2_wyw5g")]
+Exp_present = ExtResource("4_6s71d")
 
 [node name="Doge" parent="." instance=ExtResource("3_pvi6c")]
 position = Vector2(536, 320)

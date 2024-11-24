@@ -24,10 +24,12 @@ func _process(delta: float) -> void:
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
-		die()
+		Spirit_die()
 			
 
-func die():
+func Spirit_die():
+	var current_position = position
+	GlobalSignal.spirit_dead.emit(current_position)
 	queue_free()  # Poistetaan pelaaja pelistä
 
 

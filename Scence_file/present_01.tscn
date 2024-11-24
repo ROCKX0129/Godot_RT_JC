@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnq2ti3urv4fc"]
+
+[ext_resource type="Texture2D" uid="uid://biggaswx1cjds" path="res://Material/Pic_material/environment_PIC/lahja.png" id="1_3aix7"]
+[ext_resource type="Script" path="res://script_file/present_01.gd" id="1_obnkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtym6"]
+
+[node name="Present01" type="Area2D"]
+script = ExtResource("1_obnkh")
+
+[node name="Present_shape" type="CollisionShape2D" parent="."]
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_xtym6")
+
+[node name="Present_PIC" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3aix7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
