@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1tjug3shgcdg"
+path="res://.godot/imported/Christmas survival title screen music.mp3-20843c88a82ce48cbb25c56f3f6dfbfb.mp3str"
+
+[deps]
+
+source_file="res://Material/Sound_material/Christmas survival title screen music.mp3"
+dest_files=["res://.godot/imported/Christmas survival title screen music.mp3-20843c88a82ce48cbb25c56f3f6dfbfb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

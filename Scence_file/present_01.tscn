@@ -9,16 +9,16 @@
 script = ExtResource("1_obnkh")
 
 [node name="Present_shape" type="CollisionShape2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(1.27885, 1.575)
 shape = SubResource("RectangleShape2D_xtym6")
 
 [node name="Present_PIC" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3aix7")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Ani_Timer" type="Timer" parent="."]
 wait_time = 0.2
-autostart = true
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Ani_Timer" to="." method="_on_ani_timer_timeout"]

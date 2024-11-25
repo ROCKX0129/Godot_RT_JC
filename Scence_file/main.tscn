@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8f6rbo2s3oig"]
+[gd_scene load_steps=4 format=3 uid="uid://c8f6rbo2s3oig"]
 
 [ext_resource type="Script" path="res://script_file/main.gd" id="1_ljgut"]
 [ext_resource type="PackedScene" uid="uid://cpi8hdao1ptxc" path="res://Scence_file/BG.tscn" id="2_j56im"]
+[ext_resource type="AudioStream" uid="uid://c1tjug3shgcdg" path="res://Material/Sound_material/Christmas survival title screen music.mp3" id="3_2p4vq"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ljgut")
@@ -23,6 +24,11 @@ theme_override_font_sizes/font_size = 25
 text = "Quit Game"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_j56im")]
+
+[node name="Tittile_music_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2p4vq")
+volume_db = -15.0
+parameters/looping = true
 
 [connection signal="pressed" from="startGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="quitGame" to="." method="_on_quit_game_pressed"]
