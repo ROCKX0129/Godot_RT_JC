@@ -7,6 +7,6 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 
 [node name="VarillinenMainTaustakuva" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(577, 347)
-scale = Vector2(0.16498, 0.141403)
+position = Vector2(577.625, 327.125)
+scale = Vector2(0.165158, 0.13339)
 texture = ExtResource("1_68mq2")
