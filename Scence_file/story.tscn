@@ -9,7 +9,21 @@ script = ExtResource("1_bahh8")
 
 [node name="storyBackground" parent="." instance=ExtResource("3_hps7l")]
 
+[node name="Next" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 952.0
+offset_top = 576.0
+offset_right = 1126.0
+offset_bottom = 633.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "Next
+"
+
 [node name="Play" type="Button" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -36,16 +50,16 @@ volume_db = 2.333
 autoplay = true
 parameters/looping = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Story" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Story"]
 offset_left = 48.0
 offset_top = 40.0
 offset_right = 1096.0
 offset_bottom = 552.0
 color = Color(0.0980392, 0.0980392, 0.0980392, 0.717647)
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="Label" type="Label" parent="Story/ColorRect"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 24.0
@@ -60,5 +74,33 @@ text = "\"Christmas has turned into a nightmare. Evil has risen from the shadows
 \"Christmas is in darkness. Now it is time to reignite the light.\""
 autowrap_mode = 2
 
+[node name="Story2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Story2"]
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 1096.0
+offset_bottom = 552.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.717647)
+
+[node name="Label" type="Label" parent="Story2/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 512.0
+offset_bottom = 480.0
+text = "Oh boy, those blasted goblins have broken into Santa's workshop, and as the vile scoundrels they are, they’ve scattered the children’s presents all over the idyllic Christmas Village. As the player, your goal is to collect as many presents as possible and return them to Santa’s sack before his inevitable demise. Your only defenses are Santa’s unshakable Christmas spirit, his ice-sliding felt boots, and your loyal reindeer.
+
+The character is controlled using either the arrow keys or WASD keys:
+
+W / Up Arrow – Santa moves upward
+A / Left Arrow – Santa moves left
+S / Down Arrow – Santa moves downward
+D / Right Arrow – Santa moves right
+Rudolph is an independent creature and doesn’t require player control. "
+autowrap_mode = 2
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
