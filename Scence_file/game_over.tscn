@@ -44,13 +44,18 @@ color = Color(0.196078, 0.196078, 0.196078, 0.541176)
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
 offset_top = 8.0
-offset_right = 536.0
+offset_right = 528.0
 offset_bottom = 520.0
-text = "The Spirits have finally caught up to you. Exhausted and outnumbered, you had no choice but to retreat.
+text = "The Spirits have finally caught up to you. Exhausted and 
+outnumbered, you had no choice but to retreat.
 
-You return to the smoldering ruins of the Christmas Village, carrying the few precious gifts you managed to save. Though Christmas is not yet restored, your efforts have kept hope alive.
+You return to the smoldering ruins of the Christmas Village, 
+carrying the few precious gifts you managed to save. 
+Though Christmas is not yet restored, your efforts have kept 
+hope alive.
 
-Will you gather your strength and try again to reclaim what was lost?"
+Will you gather your strength and try again 
+to reclaim what was lost?"
 autowrap_mode = 1
 
 [node name="Tittile_music_player" type="AudioStreamPlayer2D" parent="."]
