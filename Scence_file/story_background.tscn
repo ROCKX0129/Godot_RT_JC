@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqin8jlwrkalf"]
+
+[ext_resource type="Texture2D" uid="uid://doj43c8nqq28o" path="res://Material/Pic_material/Taustakuvat/BackRound_story.jpeg" id="1_oe10e"]
+
+[node name="storyBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="BackRoundStory" type="Sprite2D" parent="."]
+position = Vector2(584, 312)
+scale = Vector2(0.566406, 0.359863)
+texture = ExtResource("1_oe10e")

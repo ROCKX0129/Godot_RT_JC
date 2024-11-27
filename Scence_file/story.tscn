@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://cv0mdnsjo2s5b"]
+
+[ext_resource type="Script" path="res://script_file/story.gd" id="1_bahh8"]
+[ext_resource type="AudioStream" uid="uid://c1tjug3shgcdg" path="res://Material/Sound_material/Christmas survival title screen music.mp3" id="2_p2soj"]
+[ext_resource type="PackedScene" uid="uid://cqin8jlwrkalf" path="res://Scence_file/story_background.tscn" id="3_hps7l"]
+
+[node name="Story" type="Node2D"]
+script = ExtResource("1_bahh8")
+
+[node name="storyBackground" parent="." instance=ExtResource("3_hps7l")]
+
+[node name="Play" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 952.0
+offset_top = 576.0
+offset_right = 1126.0
+offset_bottom = 633.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "Play"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 576.0
+offset_right = 206.0
+offset_bottom = 633.0
+theme_override_font_sizes/font_size = 26
+text = "Back
+"
+
+[node name="Tittile_music_player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_p2soj")
+volume_db = 2.333
+autoplay = true
+parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = 48.0
+offset_top = 40.0
+offset_right = 1096.0
+offset_bottom = 552.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 0.717647)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 512.0
+offset_bottom = 480.0
+text = "\"Christmas has turned into a nightmare. Evil has risen from the shadows, and Santa's world is collapsing. The Spirits – children of darkness, ancient embodiments of hatred – have attacked. They have stolen all the presents and burned Santa's workshop along with his village.\"
+
+\"Their malice is older than the snow, older than Christmas itself. Now they have fled into the depths of the forest, a place from which no one has ever returned. But Santa refuses to give up.\"
+
+\"Alone, but with his loyal reindeer Petteri by his side, he ventures into the forest. Santa knows that retrieving the gifts is not just his duty – it is the only way to save Christmas and the light that still flickers in the hearts of the world.\"
+
+\"Christmas is in darkness. Now it is time to reignite the light.\""
+autowrap_mode = 2
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

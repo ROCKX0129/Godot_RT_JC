@@ -10,4 +10,4 @@ func _on_quit_game_pressed() -> void:
 	
 
 func _on_start_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scence_file/world.tscn")
+	get_tree().change_scene_to_file("res://Scence_file/story.tscn")
