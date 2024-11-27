@@ -44,7 +44,7 @@ color = Color(0.196078, 0.196078, 0.196078, 0.541176)
 [node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
 offset_top = 8.0
-offset_right = 512.0
+offset_right = 536.0
 offset_bottom = 520.0
 text = "The Spirits have finally caught up to you. Exhausted and outnumbered, you had no choice but to retreat.
 
