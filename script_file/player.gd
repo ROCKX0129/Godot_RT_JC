@@ -62,9 +62,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func take_damage(amount: int) -> void:
-	health -= amount  # Vähennetään pelaajan terveyttä
-	%ProgressBar.value = health
-	if health <= 0:
+	Game.playerHP -= amount  # Vähennetään pelaajan terveyttä
+	%ProgressBar.value = Game.playerHP
+	if Game.playerHP <= 0:
 		die()  # Pelaaja kuolee, jos terveys menee nollaan
 
 # Funktio, joka käsittelee pelaajan kuoleman

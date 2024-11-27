@@ -22,8 +22,8 @@ func _process(delta: float) -> void:
 	pass # Replace with function body.
 
 func take_damage(amount: int) -> void:
-	health -= amount
-	if health <= 0:
+	Game.spiritHP -= amount
+	if Game.spiritHP <= 0:
 		Spirit_die()
 			
 
