@@ -49,8 +49,9 @@ func location_to_player_length():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Jos osuu pelaajaan
+		Game.Presents += 1
 		queue_free()
-	pass # Replace with function body.
+
 
 
 func _on_ani_timer_timeout() -> void:

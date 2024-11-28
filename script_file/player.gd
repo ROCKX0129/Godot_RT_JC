@@ -6,8 +6,6 @@ var SPEED = 100
 @onready var map_layer: TileMapLayer = $"../MapLayer"
 signal health_depleted
 
-var health = 100
-
 enum States {Normal, Slowing}
 var state=States.Normal: set = set_state
 

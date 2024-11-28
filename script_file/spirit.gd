@@ -5,8 +5,6 @@ var player= null
 @onready var Spirit_pic:Sprite2D = $Spirit_pic
 @onready var  Moving_Timer = $Moving_Timer
 @onready var Hitting_Box = $Hiiting_Box
-var attack :Attack
-var health = 1.0
 
 func location_to_player():
 	var player_node = get_tree().get_first_node_in_group("Player") as Node2D

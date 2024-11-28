@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bpfv8t8xn213"]
+[gd_scene load_steps=11 format=4 uid="uid://bpfv8t8xn213"]
 
 [ext_resource type="Script" path="res://script_file/world.gd" id="1_ruyrh"]
 [ext_resource type="PackedScene" uid="uid://ynfeyg5olns0" path="res://Scence_file/player.tscn" id="1_uls1l"]
@@ -35,6 +35,20 @@ texture = ExtResource("5_68npu")
 physics_layer_0/collision_layer = 1
 sources/16 = SubResource("TileSetAtlasSource_pr1qq")
 tile_proxies/coords_level = [[6, Vector2i(0, 0)], [9, Vector2i(0, 0)], [7, Vector2i(0, 0)], [9, Vector2i(1, 0)], [7, Vector2i(0, 1)], [9, Vector2i(1, 1)], [7, Vector2i(0, 2)], [9, Vector2i(1, 2)], [8, Vector2i(0, 0)], [9, Vector2i(2, 0)], [8, Vector2i(0, 1)], [9, Vector2i(2, 1)]]
+
+[sub_resource type="GDScript" id="GDScript_b2nv8"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"Presents: \" + str(Game.Presents)
+"
 
 [node name="world" type="Node2D"]
 y_sort_enabled = true
@@ -82,5 +96,22 @@ offset_bottom = 139.0
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_right = 144.0
+offset_bottom = 41.0
+color = Color(0.196078, 0.196078, 0.196078, 0.364706)
+
+[node name="Present" type="Label" parent="UI/ColorRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 104.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 25
+text = "Presents: "
+script = SubResource("GDScript_b2nv8")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
