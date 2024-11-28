@@ -41,11 +41,11 @@ offset_right = 1096.0
 offset_bottom = 568.0
 color = Color(0.196078, 0.196078, 0.196078, 0.541176)
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+[node name="Lopputeksti" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
 offset_top = 8.0
 offset_right = 528.0
-offset_bottom = 520.0
+offset_bottom = 304.0
 text = "The Spirits have finally caught up to you. Exhausted and 
 outnumbered, you had no choice but to retreat.
 
@@ -57,6 +57,13 @@ hope alive.
 Will you gather your strength and try again 
 to reclaim what was lost?"
 autowrap_mode = 1
+
+[node name="Lahjalaskuri" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_top = 288.0
+offset_right = 168.0
+offset_bottom = 311.0
+text = "Lahjoja"
 
 [node name="Tittile_music_player" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_hopkt")
