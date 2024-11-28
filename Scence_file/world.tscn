@@ -100,7 +100,7 @@ vertical_alignment = 1
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
-offset_right = 144.0
+offset_right = 186.0
 offset_bottom = 41.0
 color = Color(0.196078, 0.196078, 0.196078, 0.364706)
 
