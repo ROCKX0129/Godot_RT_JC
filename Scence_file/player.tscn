@@ -60,7 +60,7 @@ sprite_frames = SubResource("SpriteFrames_46weg")
 shape = SubResource("CircleShape2D_11ewy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.25, 1.25)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnq2ti3urv4fc"]
+[gd_scene load_steps=5 format=3 uid="uid://cnq2ti3urv4fc"]
 
 [ext_resource type="Texture2D" uid="uid://biggaswx1cjds" path="res://Material/Pic_material/environment_PIC/lahja.png" id="1_3aix7"]
 [ext_resource type="Script" path="res://script_file/present_01.gd" id="1_obnkh"]
+[ext_resource type="AudioStream" uid="uid://c85tnoy6atmrw" path="res://Material/Sound_material/PRESENT PICK UP - sound effect.mp3" id="3_1h6sd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtym6"]
 
@@ -20,5 +21,9 @@ texture = ExtResource("1_3aix7")
 wait_time = 0.2
 one_shot = true
 
+[node name="prensent_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1h6sd")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Ani_Timer" to="." method="_on_ani_timer_timeout"]
+[connection signal="finished" from="prensent_audio" to="." method="_on_prensent_audio_finished"]

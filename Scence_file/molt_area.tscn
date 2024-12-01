@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://b70y1rtwap54w"]
+
+[ext_resource type="Script" path="res://script_file/molt_area.gd" id="1_awpa1"]
+[ext_resource type="Texture2D" uid="uid://orx1vyr1clwn" path="res://Material/Pic_material/Molt_Ani/Area_juoma_area1.png" id="2_b1ymc"]
+[ext_resource type="Texture2D" uid="uid://bupm3y6hb2ww2" path="res://Material/Pic_material/Molt_Ani/Area_juoma_area2.png" id="3_dkww8"]
+[ext_resource type="Texture2D" uid="uid://3gwm5ljf8ey8" path="res://Material/Pic_material/Molt_Ani/Area_juoma_area3.png" id="4_yk1if"]
+[ext_resource type="Texture2D" uid="uid://qygc1dr5aejx" path="res://Material/Pic_material/Molt_Ani/Area_juoma_End1.png" id="5_qwvy1"]
+[ext_resource type="Texture2D" uid="uid://dswqio166lajo" path="res://Material/Pic_material/Molt_Ani/Area_juoma_End2.png" id="6_biumj"]
+[ext_resource type="Texture2D" uid="uid://b3ufupyych5hg" path="res://Material/Pic_material/Molt_Ani/Area_juoma_End3.png" id="7_ivjjx"]
+[ext_resource type="Texture2D" uid="uid://rc7h5n7d3opc" path="res://Material/Pic_material/Molt_Ani/Area_juoma_End4.png" id="8_w5spw"]
+[ext_resource type="Texture2D" uid="uid://c3cjmxedlf25k" path="res://Material/Pic_material/Molt_Ani/Area_juoma_End5.png" id="9_yqfkp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqthg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7j5xo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b1ymc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dkww8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yk1if")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qwvy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_biumj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ivjjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w5spw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yqfkp")
+}],
+"loop": false,
+"name": &"B",
+"speed": 5.0
+}]
+
+[node name="Molt_area" type="Area2D"]
+script = ExtResource("1_awpa1")
+
+[node name="M_a_shape" type="CollisionShape2D" parent="."]
+scale = Vector2(2.46528, 2.31325)
+shape = SubResource("CircleShape2D_qqthg")
+
+[node name="M_a_Ani" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7j5xo")
+animation = &"B"
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="M_a_Ani" to="." method="_on_m_a_ani_animation_finished"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_stop_timer_timeout"]

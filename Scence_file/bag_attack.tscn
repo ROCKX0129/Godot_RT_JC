@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://defy3r7b8nuor"]
+
+[ext_resource type="Script" path="res://script_file/bag_attack.gd" id="1_hup8v"]
+[ext_resource type="Texture2D" uid="uid://bp0gj1qiwtqs0" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack1.png" id="2_ht42w"]
+[ext_resource type="Texture2D" uid="uid://pyw8td1peset" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack2.png" id="3_8ycvp"]
+[ext_resource type="Texture2D" uid="uid://b0psvcm2orrxq" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack3.png" id="4_pshk7"]
+[ext_resource type="Texture2D" uid="uid://c6gx8pt3mfkt1" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack4.png" id="5_iuhpr"]
+[ext_resource type="Texture2D" uid="uid://b54njdj7oq8dj" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack5.png" id="6_7lpss"]
+[ext_resource type="Texture2D" uid="uid://ch5m1moejgv6p" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack6.png" id="7_ymsch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy721"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3nhs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ycvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ht42w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pshk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iuhpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7lpss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ymsch")
+}],
+"loop": false,
+"name": &"normal",
+"speed": 7.0
+}]
+
+[node name="bag_attack" type="Area2D"]
+script = ExtResource("1_hup8v")
+
+[node name="Bag_Shape" type="CollisionShape2D" parent="."]
+position = Vector2(1, -9)
+scale = Vector2(1, 1.6)
+shape = SubResource("RectangleShape2D_hy721")
+
+[node name="Bag_Ani" type="AnimatedSprite2D" parent="."]
+position = Vector2(21, -3)
+sprite_frames = SubResource("SpriteFrames_p3nhs")
+animation = &"normal"
+speed_scale = 3.0
+
+[node name="frist_Timer" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="end_Timer" type="Timer" parent="."]
+wait_time = 1.4
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="frist_Timer" to="." method="_on_frist_timer_timeout"]
+[connection signal="timeout" from="end_Timer" to="." method="_on_end_timer_timeout"]

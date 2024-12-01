@@ -5,13 +5,13 @@ class_name Player
 var SPEED = 100
 @onready var map_layer: TileMapLayer = $"../MapLayer"
 signal health_depleted
-
-var health = 100
+@onready var present_audio: AudioStreamPlayer2D = $present_audio
 
 enum States {Normal, Slowing}
 var state=States.Normal: set = set_state
 
 func _ready() -> void:
+	global_position = Vector2(15,15)
 	add_to_group("Player")
 	pass
 
@@ -62,9 +62,9 @@ func _physics_process(_delta: float) -> void:
 
 
 func take_damage(amount: int) -> void:
-	health -= amount  # Vähennetään pelaajan terveyttä
-	%ProgressBar.value = health
-	if health <= 0:
+	Game.playerHP -= amount  # Vähennetään pelaajan terveyttä
+	%ProgressBar.value = Game.playerHP
+	if Game.playerHP <= 0:
 		die()  # Pelaaja kuolee, jos terveys menee nollaan
 
 # Funktio, joka käsittelee pelaajan kuoleman

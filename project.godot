@@ -18,6 +18,7 @@ config/icon="res://Material/Pic_material/icon.svg"
 [autoload]
 
 GlobalSignal="*res://script_file/Global_signal.gd"
+Game="*res://script_file/Game.gd"
 
 [display]
 

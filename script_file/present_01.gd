@@ -1,5 +1,6 @@
 extends Area2D
 @onready var ani_timer: Timer = $Ani_Timer
+@onready var prensent_audio: AudioStreamPlayer2D = $prensent_audio
 
 var player_went_zone = false
 var timer_started = false
@@ -49,10 +50,17 @@ func location_to_player_length():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Jos osuu pelaajaan
-		queue_free()
-	pass # Replace with function body.
+		Game.Presents += 1
+		prensent_audio.play()
+		visible=false
+
 
 
 func _on_ani_timer_timeout() -> void:
 	speed_controller = 10
+	pass # Replace with function body.
+
+
+func _on_prensent_audio_finished() -> void:
+	queue_free()
 	pass # Replace with function body.

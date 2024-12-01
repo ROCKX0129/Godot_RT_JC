@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://bby2vuvtov0l"]
+
+[ext_resource type="Script" path="res://script_file/molt_throwed.gd" id="1_cubut"]
+[ext_resource type="PackedScene" uid="uid://b70y1rtwap54w" path="res://Scence_file/molt_area.tscn" id="2_6f2p1"]
+[ext_resource type="Texture2D" uid="uid://dftredw65tq2g" path="res://Material/Pic_material/Molt_Ani/Mol_brokt1.png" id="3_lsvbp"]
+[ext_resource type="Texture2D" uid="uid://ejrqmvhdkcm5" path="res://Material/Pic_material/Molt_Ani/Mol_brokt2.png" id="4_384px"]
+[ext_resource type="Texture2D" uid="uid://corqmi0go6khp" path="res://Material/Pic_material/Molt_Ani/Mol_brokt3.png" id="5_nrj57"]
+[ext_resource type="Texture2D" uid="uid://diwhx54yc4g0c" path="res://Material/Pic_material/Molt_Ani/Mol_brokt4.png" id="6_0u154"]
+[ext_resource type="Texture2D" uid="uid://dss46aptlvsxm" path="res://Material/Pic_material/Molt_Ani/Molt.png" id="7_c21t4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bspbo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lsvbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_384px")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nrj57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0u154")
+}],
+"loop": true,
+"name": &"landed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_c21t4")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}]
+
+[node name="Molt_throwed" type="Node2D"]
+script = ExtResource("1_cubut")
+molt_area = ExtResource("2_6f2p1")
+
+[node name="Molt_throwed_Ani" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bspbo")
+animation = &"stand"
+
+[node name="lanching_timer" type="Timer" parent="."]
+wait_time = 0.001
+
+[connection signal="timeout" from="lanching_timer" to="." method="_on_lanching_timer_timeout"]

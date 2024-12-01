@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c85tnoy6atmrw"
+path="res://.godot/imported/PRESENT PICK UP - sound effect.mp3-6b5a4878b1f7c7064c7a0656159bbef1.mp3str"
+
+[deps]
+
+source_file="res://Material/Sound_material/PRESENT PICK UP - sound effect.mp3"
+dest_files=["res://.godot/imported/PRESENT PICK UP - sound effect.mp3-6b5a4878b1f7c7064c7a0656159bbef1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
