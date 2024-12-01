@@ -3,7 +3,7 @@ extends Area2D
 
 var player_went_zone = false
 var timer_started = false
-var speed_controller = -1
+var speed_controller = -2
 
 var collecting_zone = 75
 #zone of collecting present
