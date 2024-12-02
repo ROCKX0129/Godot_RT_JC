@@ -33,5 +33,5 @@ func Spirit_die():
 
 func _on_hiiting_box_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Jos osuu pelaajaan
-		body.take_damage(3)  # Vähennetään pelaajan terveyttä
+		body.player_take_damage(3)  # Vähennetään pelaajan terveyttä
 		queue_free()
