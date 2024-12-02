@@ -27,4 +27,5 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(1)
-	pass # Replace with function body.
+	if body.name == "Player":  # Jos osuu pelaajaan
+		body.player_take_damage(20)  # Vähennetään pelaajan terveyttä
