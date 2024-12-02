@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://script_file/main.gd" id="1_ljgut"]
 [ext_resource type="PackedScene" uid="uid://cpi8hdao1ptxc" path="res://Scence_file/BG.tscn" id="2_j56im"]
-[ext_resource type="AudioStream" uid="uid://c1tjug3shgcdg" path="res://Material/Sound_material/Christmas survival title screen music.mp3" id="3_2p4vq"]
+[ext_resource type="AudioStream" uid="uid://blhfq35y6bcwn" path="res://Material/Sound_material/UUSI MAIN MENU THEME.mp3" id="3_lhv18"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ljgut")
@@ -26,7 +26,7 @@ text = "Quit Game"
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_j56im")]
 
 [node name="Tittile_music_player" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_2p4vq")
+stream = ExtResource("3_lhv18")
 volume_db = 2.333
 autoplay = true
 parameters/looping = true

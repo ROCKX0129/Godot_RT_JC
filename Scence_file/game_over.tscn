@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://xq7msj60614i" path="res://Material/Pic_material/Taustakuvat/BackRound_GameOver.jpeg" id="1_0jx1t"]
 [ext_resource type="Script" path="res://script_file/game_over.gd" id="1_p6avc"]
-[ext_resource type="AudioStream" uid="uid://c6a55e1w05xc3" path="res://Material/Sound_material/GAME OVER - sound effect.mp3" id="3_0ctxk"]
+[ext_resource type="AudioStream" uid="uid://blhfq35y6bcwn" path="res://Material/Sound_material/UUSI MAIN MENU THEME.mp3" id="3_erx6h"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_p6avc")
@@ -66,9 +66,7 @@ offset_bottom = 311.0
 text = "Lahjoja"
 
 [node name="Tittile_music_player" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_0ctxk")
-volume_db = 2.333
-autoplay = true
+stream = ExtResource("3_erx6h")
 parameters/looping = true
 
 [connection signal="pressed" from="playAgain" to="." method="_on_play_again_pressed"]

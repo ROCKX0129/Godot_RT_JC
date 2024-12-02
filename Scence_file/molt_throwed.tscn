@@ -41,6 +41,7 @@ script = ExtResource("1_cubut")
 molt_area = ExtResource("2_6f2p1")
 
 [node name="Molt_throwed_Ani" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.528302, 0.518519)
 sprite_frames = SubResource("SpriteFrames_bspbo")
 animation = &"stand"
 

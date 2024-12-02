@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0psvcm2orrxq"
-path="res://.godot/imported/bag_attack3.png-e6529fc4498d448b6280b976a32bed74.ctex"
+uid="uid://cv6l1hj06wqfv"
+path="res://.godot/imported/bag_attack5.png-ccad6fdf64077778d3b4ce0fe207c7a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Material/Pic_material/Bag_Attack_Ani/bag_attack3.png"
-dest_files=["res://.godot/imported/bag_attack3.png-e6529fc4498d448b6280b976a32bed74.ctex"]
+source_file="res://Material/Pic_material/Bag_Attack_01/bag_attack5.png"
+dest_files=["res://.godot/imported/bag_attack5.png-ccad6fdf64077778d3b4ce0fe207c7a1.ctex"]
 
 [params]
 

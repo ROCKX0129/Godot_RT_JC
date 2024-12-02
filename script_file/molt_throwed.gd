@@ -20,6 +20,8 @@ func random_position():
 	pass
 
 func _physics_process(delta: float) -> void:
+	rotation_degrees+=6
+	
 	if get_random_positon == false:
 		direction=(global_position-random_position()).normalized()
 		direction_to_target=(random_position())

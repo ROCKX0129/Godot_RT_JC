@@ -1,61 +1,56 @@
 [gd_scene load_steps=10 format=3 uid="uid://defy3r7b8nuor"]
 
 [ext_resource type="Script" path="res://script_file/bag_attack.gd" id="1_hup8v"]
-[ext_resource type="Texture2D" uid="uid://bp0gj1qiwtqs0" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack1.png" id="2_ht42w"]
-[ext_resource type="Texture2D" uid="uid://pyw8td1peset" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack2.png" id="3_8ycvp"]
-[ext_resource type="Texture2D" uid="uid://b0psvcm2orrxq" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack3.png" id="4_pshk7"]
-[ext_resource type="Texture2D" uid="uid://c6gx8pt3mfkt1" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack4.png" id="5_iuhpr"]
-[ext_resource type="Texture2D" uid="uid://b54njdj7oq8dj" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack5.png" id="6_7lpss"]
-[ext_resource type="Texture2D" uid="uid://ch5m1moejgv6p" path="res://Material/Pic_material/Bag_Attack_Ani/bag_attack6.png" id="7_ymsch"]
+[ext_resource type="Texture2D" uid="uid://5bfuskdlqmw4" path="res://Material/Pic_material/Bag_Attack_01/bag_attack1.png" id="2_yhp4y"]
+[ext_resource type="Texture2D" uid="uid://bwjuhgk6jpjnc" path="res://Material/Pic_material/Bag_Attack_01/bag_attack2.png" id="3_o6y1m"]
+[ext_resource type="Texture2D" uid="uid://bl2lmfae7omma" path="res://Material/Pic_material/Bag_Attack_01/bag_attack3.png" id="4_5trxt"]
+[ext_resource type="Texture2D" uid="uid://cso0w7bcn8oht" path="res://Material/Pic_material/Bag_Attack_01/bag_attack4.png" id="5_5847m"]
+[ext_resource type="Texture2D" uid="uid://cv6l1hj06wqfv" path="res://Material/Pic_material/Bag_Attack_01/bag_attack5.png" id="6_rxmyu"]
+[ext_resource type="Texture2D" uid="uid://c4rmchpsbfwy5" path="res://Material/Pic_material/Bag_Attack_01/bag_attack6.png" id="7_wnhq1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hy721"]
+size = Vector2(9.15532, 39.1045)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3nhs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8ycvp")
+"texture": ExtResource("2_yhp4y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ht42w")
+"texture": ExtResource("3_o6y1m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_pshk7")
+"texture": ExtResource("4_5trxt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_iuhpr")
+"texture": ExtResource("5_5847m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_7lpss")
+"texture": ExtResource("6_rxmyu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_ymsch")
+"texture": ExtResource("7_wnhq1")
 }],
 "loop": false,
 "name": &"normal",
-"speed": 7.0
+"speed": 5.0
 }]
 
 [node name="bag_attack" type="Area2D"]
+rotation = 1.77096
 script = ExtResource("1_hup8v")
 
 [node name="Bag_Shape" type="CollisionShape2D" parent="."]
-position = Vector2(1, -9)
-scale = Vector2(1, 1.6)
+position = Vector2(26.4468, -10.4674)
+scale = Vector2(6.097, 0.3)
 shape = SubResource("RectangleShape2D_hy721")
 
 [node name="Bag_Ani" type="AnimatedSprite2D" parent="."]
-position = Vector2(21, -3)
+position = Vector2(24.0749, -17.1288)
 sprite_frames = SubResource("SpriteFrames_p3nhs")
 animation = &"normal"
-speed_scale = 3.0
-
-[node name="frist_Timer" type="Timer" parent="."]
-wait_time = 0.7
-
-[node name="end_Timer" type="Timer" parent="."]
-wait_time = 1.4
+speed_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="frist_Timer" to="." method="_on_frist_timer_timeout"]
-[connection signal="timeout" from="end_Timer" to="." method="_on_end_timer_timeout"]
+[connection signal="animation_finished" from="Bag_Ani" to="." method="_on_bag_ani_animation_finished"]

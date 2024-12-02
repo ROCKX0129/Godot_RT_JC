@@ -107,9 +107,6 @@ text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="GameOver"]
-stream = ExtResource("11_1vcri")
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
@@ -130,5 +127,8 @@ script = SubResource("GDScript_b2nv8")
 [node name="Gameing_music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_3tol6")
 parameters/looping = false
+
+[node name="GameOverMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_1vcri")
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
