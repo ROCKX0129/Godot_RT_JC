@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc4gq4c87dm3o"]
+
+[ext_resource type="Script" path="res://script_file/spirit_snowball.gd" id="1_rqxk5"]
+[ext_resource type="Script" path="res://script_file/spirit_pic.gd" id="2_rayj3"]
+[ext_resource type="Texture2D" uid="uid://bssas2pdv4m02" path="res://Material/Pic_material/Vihollisen/lumi_pallo_vihollisen.png" id="2_unx8q"]
+[ext_resource type="PackedScene" uid="uid://cxyoyrhhau7ic" path="res://Scence_file/snowball.tscn" id="2_yi0cs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osk4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ou3nf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_43j3r"]
+
+[node name="spirit_Snowball" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_rqxk5")
+snowball = ExtResource("2_yi0cs")
+
+[node name="Spirit_Snowball_Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_osk4u")
+
+[node name="Spirit_Snowball_PIC" type="Sprite2D" parent="."]
+texture = ExtResource("2_unx8q")
+script = ExtResource("2_rayj3")
+
+[node name="Moving_Timer" type="Timer" parent="Spirit_Snowball_PIC"]
+autostart = true
+
+[node name="Shooting_zoom" type="Area2D" parent="."]
+
+[node name="Shape1" type="CollisionShape2D" parent="Shooting_zoom"]
+scale = Vector2(60, 60)
+shape = SubResource("CircleShape2D_ou3nf")
+
+[node name="Outing_zoom" type="Area2D" parent="."]
+
+[node name="Shape2" type="CollisionShape2D" parent="Outing_zoom"]
+scale = Vector2(45, 45)
+shape = SubResource("CircleShape2D_43j3r")
+
+[node name="Throwed_Timer" type="Timer" parent="."]
+
+[connection signal="body_exited" from="Shooting_zoom" to="." method="_on_shooting_zoom_body_exited"]
+[connection signal="body_entered" from="Outing_zoom" to="." method="_on_outing_zoom_body_entered"]
+[connection signal="timeout" from="Throwed_Timer" to="." method="_on_throwed_timer_timeout"]

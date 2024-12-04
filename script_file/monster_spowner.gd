@@ -2,11 +2,14 @@ extends Node2D
 @onready var spown_timer=$Spirit_Timer
 @export var Enemy_Gobling:PackedScene
 @export var Exp_present:PackedScene
+@export var Snowball_Gobling:PackedScene
+@onready var spirit_timer_2: Timer = $Spirit_Timer2
 var SPOWN_RADIUS = 350
 var SPOWN_RADIUS_for_present = 200
 @onready var player = get_parent().get_node("Player")
 
 func _ready() -> void:
+	spirit_timer_2.start()
 	spown_timer.start()
 	pass
 	
@@ -16,6 +19,11 @@ func spirit_dead(position):
 	present_spown.global_position = position
 	pass
 
+func snowball_throwed(snowball_instance,position,direction):
+	add_child(snowball_instance)
+	snowball_instance.global_position = position
+	snowball_instance.set_direction(direction)
+	pass
 
 
 
@@ -33,4 +41,14 @@ func _on_spirit_timer_timeout() -> void:
 	get_parent().add_child(present_spown)
 	present_spown.global_position = spawn_position_for_present
 	
+	pass # Replace with function body.
+
+
+func _on_spirit_timer_2_timeout() -> void:
+	var player_position = player.global_position
+	var random_direction = Vector2.RIGHT.rotated(randi_range(0,TAU))
+	var spawn_position = (random_direction*SPOWN_RADIUS) +player_position
+	var snowball_spirit_spowner = Snowball_Gobling.instantiate()
+	get_parent().add_child(snowball_spirit_spowner)
+	snowball_spirit_spowner.global_position = spawn_position
 	pass # Replace with function body.

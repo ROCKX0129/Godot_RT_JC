@@ -7,7 +7,9 @@ var SPEED = 100
 signal health_depleted
 @onready var present_audio: AudioStreamPlayer2D = $present_audio
 
-enum States {Normal, Slowing}
+
+
+enum States {Normal, Slowing, Steping}
 var state=States.Normal: set = set_state
 
 func _ready() -> void:
@@ -51,6 +53,7 @@ func _physics_process(_delta: float) -> void:
 	if direction or y_direction:
 		velocity = Vector2(direction * SPEED, y_direction * SPEED)
 		play_Ani.play()
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
@@ -72,3 +75,7 @@ func die():
 	health_depleted.emit()
 	
 	
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

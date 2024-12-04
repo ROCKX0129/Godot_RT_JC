@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bpfv8t8xn213"]
+[gd_scene load_steps=17 format=4 uid="uid://bpfv8t8xn213"]
 
 [ext_resource type="Script" path="res://script_file/world.gd" id="1_ruyrh"]
 [ext_resource type="PackedScene" uid="uid://ynfeyg5olns0" path="res://Scence_file/player.tscn" id="1_uls1l"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://xeb3em0k005n" path="res://Scence_file/bag_attack_spowner.tscn" id="9_rh4me"]
 [ext_resource type="AudioStream" uid="uid://c6a55e1w05xc3" path="res://Material/Sound_material/GAME OVER - sound effect.mp3" id="11_1vcri"]
 [ext_resource type="AudioStream" uid="uid://6gmdxsevrwul" path="res://Material/Sound_material/GAMEPLAY MUSIC.mp3" id="11_3tol6"]
+[ext_resource type="PackedScene" uid="uid://cc4gq4c87dm3o" path="res://Scence_file/spirit_snowball.tscn" id="13_4ehaq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pr1qq"]
 texture = ExtResource("5_68npu")
@@ -67,6 +68,7 @@ script = ExtResource("1_ruyrh")
 
 [node name="Monster_Spowner" parent="." instance=ExtResource("2_wyw5g")]
 Exp_present = ExtResource("4_6s71d")
+Snowball_Gobling = ExtResource("13_4ehaq")
 
 [node name="Doge" parent="." instance=ExtResource("3_pvi6c")]
 position = Vector2(536, 320)
@@ -130,5 +132,8 @@ parameters/looping = false
 
 [node name="GameOverMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_1vcri")
+
+[node name="spirit_Snowball" parent="." instance=ExtResource("13_4ehaq")]
+position = Vector2(389, 628)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]

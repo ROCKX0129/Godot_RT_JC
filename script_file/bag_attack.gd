@@ -29,7 +29,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_bag_ani_animation_finished() -> void:
 	if Ani_playered == 1 :
-		print(1)
 		queue_free()
 	if Ani_playered == 0:
 		bag_ani.play_backwards()

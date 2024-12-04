@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxyoyrhhau7ic"]
+
+[ext_resource type="Script" path="res://script_file/snowball.gd" id="1_6aw2d"]
+[ext_resource type="Texture2D" uid="uid://cba7bl2tnxv1v" path="res://Material/Pic_material/lumi_pallo_Ani/Lumi_pallo_Ani1.png" id="2_tp5uo"]
+[ext_resource type="Texture2D" uid="uid://ci67cl5oxi5g3" path="res://Material/Pic_material/lumi_pallo_Ani/Lumi_pallo_Ani2.png" id="3_313r8"]
+[ext_resource type="Texture2D" uid="uid://dwtoux1oefyad" path="res://Material/Pic_material/lumi_pallo_Ani/Lumi_pallo_Ani3.png" id="4_8treb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_thnma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tp5uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_313r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8treb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fx5jj"]
+
+[node name="Snowball" type="Area2D"]
+z_index = 1
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_6aw2d")
+
+[node name="Snowball_ani" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_thnma")
+
+[node name="Snowball_Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fx5jj")
+
+[node name="Bullet_kiilerTimer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Bullet_kiilerTimer" to="." method="_on_bullet_kiiler_timer_timeout"]

@@ -7,6 +7,7 @@ extends Node2D
 
 func _ready() -> void:
 	GlobalSignal.connect("spirit_dead",Callable(monster_spowner,"spirit_dead"))
+	GlobalSignal.connect("snowball_throwed",Callable(monster_spowner,"snowball_throwed"))
 	gameing_music.play()
 	game_over_music.process_mode = Node.PROCESS_MODE_ALWAYS
 

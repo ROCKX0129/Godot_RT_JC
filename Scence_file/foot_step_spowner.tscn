@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://boq6rvrfrukvv"]
+
+[ext_resource type="Script" path="res://script_file/foot_step_spowner.gd" id="1_y4edb"]
+[ext_resource type="PackedScene" uid="uid://bwn28p2kri3k0" path="res://Scence_file/foot_step_pic.tscn" id="2_tuakm"]
+
+[node name="foot_step_spowner" type="Node2D"]
+script = ExtResource("1_y4edb")
+foot_step_pic = ExtResource("2_tuakm")
+
+[node name="foot_step_Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="foot_step_Timer" to="." method="_on_timer_timeout"]
