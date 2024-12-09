@@ -7,9 +7,10 @@ extends Node2D
 var SPOWN_RADIUS = 350
 var SPOWN_RADIUS_for_present = 200
 @onready var player = get_parent().get_node("Player")
+@onready var wait_timer: Timer = $Wait_Timer
 
 func _ready() -> void:
-	spirit_timer_2.start()
+	wait_timer.start()
 	spown_timer.start()
 	pass
 	
@@ -51,4 +52,10 @@ func _on_spirit_timer_2_timeout() -> void:
 	var snowball_spirit_spowner = Snowball_Gobling.instantiate()
 	get_parent().add_child(snowball_spirit_spowner)
 	snowball_spirit_spowner.global_position = spawn_position
+	pass # Replace with function body.
+
+
+func _on_wait_timer_timeout() -> void:
+	spirit_timer_2.start()
+	print("Snowball_Gobling spowned")
 	pass # Replace with function body.

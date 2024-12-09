@@ -53,7 +53,6 @@ func _on_hiiting_box_body_entered(body: Node2D) -> void:
 func _on_outing_zoom_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_in_zoom=true
-		shoot()
 		throwed_timer.start()
 		Moving_Timer.stop()
 		

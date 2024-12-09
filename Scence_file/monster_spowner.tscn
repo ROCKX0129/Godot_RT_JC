@@ -11,6 +11,12 @@ Enemy_Gobling = ExtResource("2_svqrp")
 wait_time = 0.5
 
 [node name="Spirit_Timer2" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="Wait_Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
 
 [connection signal="timeout" from="Spirit_Timer" to="." method="_on_spirit_timer_timeout"]
 [connection signal="timeout" from="Spirit_Timer2" to="." method="_on_spirit_timer_2_timeout"]
+[connection signal="timeout" from="Wait_Timer" to="." method="_on_wait_timer_timeout"]
