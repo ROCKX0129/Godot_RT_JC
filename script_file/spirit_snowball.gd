@@ -46,14 +46,15 @@ func Spirit_die():
 
 func _on_hiiting_box_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Jos osuu pelaajaan
-		body.player_take_damage(60)  # Vähennetään pelaajan terveyttä
+		body.player_take_damage(3)  # Vähennetään pelaajan terveyttä
 		queue_free()
 
 
 func _on_outing_zoom_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_in_zoom=true
-		throwed_timer.start()
+		if throwed_timer.is_paused() == true:
+			throwed_timer.set_paused(false)
 		Moving_Timer.stop()
 		
 	pass # Replace with function body.
@@ -63,6 +64,7 @@ func _on_shooting_zoom_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		player_in_zoom = false
 		Moving_Timer.start()
+		throwed_timer.set_paused(true)
 		pass
 	pass # Replace with function body.
 

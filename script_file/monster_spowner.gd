@@ -8,10 +8,12 @@ var SPOWN_RADIUS = 350
 var SPOWN_RADIUS_for_present = 200
 @onready var player = get_parent().get_node("Player")
 @onready var wait_timer: Timer = $Wait_Timer
+@onready var level_timer: Timer = $Level_Timer
 
 func _ready() -> void:
 	wait_timer.start()
 	spown_timer.start()
+	level_timer.start()
 	pass
 	
 func spirit_dead(position):
@@ -58,4 +60,10 @@ func _on_spirit_timer_2_timeout() -> void:
 func _on_wait_timer_timeout() -> void:
 	spirit_timer_2.start()
 	print("Snowball_Gobling spowned")
+	pass # Replace with function body.
+
+
+func _on_level_timer_timeout() -> void:
+	spown_timer.level_changed()
+	spirit_timer_2.snowball_spirit_level_changed()
 	pass # Replace with function body.

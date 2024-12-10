@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcvrahv6g4dm"]
+[gd_scene load_steps=4 format=3 uid="uid://bcvrahv6g4dm"]
 
 [ext_resource type="Script" path="res://script_file/monster_spowner.gd" id="1_fmu27"]
 [ext_resource type="PackedScene" uid="uid://quc5j6fnor6m" path="res://Scence_file/spirit.tscn" id="2_svqrp"]
+[ext_resource type="Script" path="res://script_file/spirit_timer.gd" id="3_8a6sj"]
 
 [node name="Monster_Spowner" type="Node2D"]
 script = ExtResource("1_fmu27")
@@ -9,14 +10,20 @@ Enemy_Gobling = ExtResource("2_svqrp")
 
 [node name="Spirit_Timer" type="Timer" parent="."]
 wait_time = 0.5
+script = ExtResource("3_8a6sj")
 
 [node name="Spirit_Timer2" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 7.9
+script = ExtResource("3_8a6sj")
 
 [node name="Wait_Timer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
 
+[node name="Level_Timer" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="timeout" from="Spirit_Timer" to="." method="_on_spirit_timer_timeout"]
 [connection signal="timeout" from="Spirit_Timer2" to="." method="_on_spirit_timer_2_timeout"]
 [connection signal="timeout" from="Wait_Timer" to="." method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="Level_Timer" to="." method="_on_level_timer_timeout"]

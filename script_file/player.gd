@@ -13,7 +13,6 @@ enum States {Normal, Slowing, Steping}
 var state=States.Normal: set = set_state
 
 func _ready() -> void:
-	global_position = Vector2(15,15)
 	add_to_group("Player")
 	pass
 
