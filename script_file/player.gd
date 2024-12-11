@@ -6,7 +6,7 @@ var SPEED = 100
 @onready var map_layer: TileMapLayer = $"../MapLayer"
 signal health_depleted
 @onready var present_audio: AudioStreamPlayer2D = $present_audio
-
+var in_ice =false
 
 
 enum States {Normal, Slowing, Steping}
@@ -33,9 +33,16 @@ func set_state(new_state:int) -> void:
 	
 	if previous_state == States.Normal:
 		SPEED = 200
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+		in_ice = false
 		
 	if previous_state == States.Slowing:
-		SPEED = 100
+		if in_ice == false:
+			SPEED = 100
+			in_ice = true
+			pass
+		SPEED += 3
 	pass
 
 func _physics_process(_delta: float) -> void:
@@ -54,8 +61,6 @@ func _physics_process(_delta: float) -> void:
 		play_Ani.play()
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
 		play_Ani.stop()
 	move_and_slide()
 	
